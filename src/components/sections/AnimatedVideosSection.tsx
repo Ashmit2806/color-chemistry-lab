@@ -3,19 +3,22 @@ import { Plus, Play, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
+import animatedVideo1 from "@/assets/animated-video-1.mp4";
 
 interface AnimatedVideo {
   id: string;
   title: string;
   url: string;
+  isLocal?: boolean;
 }
 
 export function AnimatedVideosSection() {
   const [videos, setVideos] = useState<AnimatedVideo[]>([
     {
       id: "1",
-      title: "Chemical Reactions Animation",
-      url: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      title: "Food Colour Identification Process",
+      url: animatedVideo1,
+      isLocal: true
     }
   ]);
   const [newTitle, setNewTitle] = useState("");
@@ -69,13 +72,22 @@ export function AnimatedVideosSection() {
             className="group relative overflow-hidden rounded-xl border border-border bg-card"
           >
             <div className="aspect-video bg-muted">
-              <iframe
-                src={video.url}
-                title={video.title}
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
+              {video.isLocal ? (
+                <video
+                  src={video.url}
+                  title={video.title}
+                  className="w-full h-full object-cover"
+                  controls
+                />
+              ) : (
+                <iframe
+                  src={video.url}
+                  title={video.title}
+                  className="w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              )}
             </div>
             <div className="p-4 flex items-center justify-between">
               <div className="flex items-center gap-2">
