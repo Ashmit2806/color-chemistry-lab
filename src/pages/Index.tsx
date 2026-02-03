@@ -46,8 +46,8 @@ const Index = () => {
     },
     {
       id: "advantages" as const,
-      title: "Advantages & Disadvantages",
-      description: "Understand the pros and cons of this dye preparation method",
+      title: "Advantages, Disadvantages & Application",
+      description: "Understand the pros, cons, and applications of this dye preparation method",
       icon: ThumbsUp,
       gradient: false,
     },
@@ -90,7 +90,7 @@ const Index = () => {
       case "video":
         return "Video Demonstration";
       case "advantages":
-        return "Advantages & Disadvantages";
+        return "Advantages, Disadvantages & Application";
       case "animated":
         return "Animated Videos";
       default:
