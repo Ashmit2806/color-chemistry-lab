@@ -1,4 +1,4 @@
-import { Check, X } from "lucide-react";
+import { Check, X, Lightbulb } from "lucide-react";
 
 const advantages = [
   { title: "Safe for food use", description: "Food additives are approved for consumption (within limits), so colour identification is safer compared to industrial dyes." },
@@ -17,6 +17,8 @@ const disadvantages = [
   { title: "Regulatory limitations", description: "Only permitted additives can be used; some colours are banned or restricted." },
   { title: "Health concerns if misused", description: "Excessive or improper use of additives can cause health issues." },
 ];
+
+const applicationText = `Color additives are widely used in various industries to enhance appearance, improve identification, and increase consumer appeal. In the food industry, they are added to beverages, candies, bakery items, sauces, and dairy products to make them visually attractive; in pharmaceuticals, they help in identifying tablets, capsules, and syrups and improve patient acceptance. Color additives are also extensively used in cosmetics and personal care products such as lipsticks, nail polish, creams, soaps, and shampoos. In addition, they are applied in the textile industry for coloring fabrics, in paints, inks, and coatings for decorative and protective purposes, in plastics and packaging to improve product appearance, in paper and printing for better visual quality, in agriculture for seed and pesticide identification, and in medical and diagnostic fields as staining and labeling agents.`;
 
 export function AdvantagesSection() {
   return (
@@ -69,6 +71,21 @@ export function AdvantagesSection() {
             ))}
           </ul>
         </div>
+      </div>
+
+      {/* Applications Section */}
+      <div className="rounded-xl border border-blue-200 dark:border-blue-900 bg-blue-50 dark:bg-blue-950/30 p-6">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 text-white">
+            <Lightbulb className="h-5 w-5" />
+          </div>
+          <h4 className="font-display text-xl font-semibold text-blue-700 dark:text-blue-400">
+            Applications
+          </h4>
+        </div>
+        <p className="text-blue-800/90 dark:text-blue-300/90 leading-relaxed">
+          {applicationText}
+        </p>
       </div>
     </div>
   );
